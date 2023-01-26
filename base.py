@@ -5,10 +5,9 @@ from time import sleep
 from bs4 import BeautifulSoup
 
 from _db import database
+from german_theme import GermanTheme
 from helper import helper
 from settings import CONFIG
-from german_theme import GermanTheme
-
 
 logging.basicConfig(format="%(asctime)s %(levelname)s:%(message)s", level=logging.INFO)
 

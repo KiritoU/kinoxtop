@@ -3,7 +3,9 @@ import logging
 import re
 from dataclasses import dataclass
 from datetime import datetime
+
 from slugify import slugify
+
 from _db import database
 from settings import CONFIG
 
