@@ -80,7 +80,7 @@ class Database:
 
     def select_or_insert(self, table: str, condition: str, data: tuple):
         res = self.select_all_from(table=table, condition=condition)
-        if not res[0]:
+        if not res:
             self.insert_into(table, data)
             res = self.select_all_from(table, condition=condition)
         return res
