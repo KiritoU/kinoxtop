@@ -64,7 +64,10 @@ class Crawler:
         if isHomePage and len(moduleContents) < 2:
             return False
 
-        moduleContent = moduleContents[1]
+        moduleContent = moduleContents[0]
+        if isHomePage:
+            moduleContent = moduleContents[1]
+
         shortEntrys = moduleContent.find_all("div", class_="short-entry")
 
         if not shortEntrys:
