@@ -165,8 +165,8 @@ class GermanTheme:
             table="episode", condition=f"movie_id={movieId}", data=(movieId, data)
         )
 
-        print(type(episode_data))
-        print(episode_data)
+        print(type(episode_data[0][2]))
+        print(episode_data[0][2])
 
         if episode_data[0][2] != data:
             print("Diff")
