@@ -168,7 +168,7 @@ class GermanTheme:
         print(type(episode_data[0][2]))
         print(episode_data[0][2])
 
-        if episode_data[0][2] != data:
+        if episode_data[0][2].decode() != data:
             print("Diff")
             database.update_table(
                 table="episode",
