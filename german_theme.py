@@ -149,16 +149,22 @@ class GermanTheme:
         return res
 
     def insert_episodes(self, movieId: int) -> None:
-        logging.info(f"Updating episodes for movie {self.movieTitle}")
+        logging.info(
+            f"Updating episodes for movie {self.movieTitle} with ID: {movieId}"
+        )
         if self.movieType == "seriel":
             self.validate_movie_episodes()
 
         data = [{"season_name": 1, "episode_data": self.get_episode_data()}]
         data = json.dumps(data)
 
+        print(data)
+
         episode_data = database.select_or_insert(
             table="episode", condition=f"movie_id={movieId}", data=(movieId, data)
         )
+
+        print(episode_data)
 
         if episode_data[0][2] != data:
             database.update_table(
