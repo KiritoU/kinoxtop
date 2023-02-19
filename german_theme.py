@@ -158,15 +158,9 @@ class GermanTheme:
         data = [{"season_name": 1, "episode_data": self.get_episode_data()}]
         data = json.dumps(data)
 
-        print(type(data))
-        print(data)
-
         episode_data = database.select_or_insert(
             table="episode", condition=f"movie_id={movieId}", data=(movieId, data)
         )
-
-        print(type(episode_data[0][2]))
-        print(episode_data[0][2])
 
         if episode_data[0][2].decode() != data:
             print("Diff")
