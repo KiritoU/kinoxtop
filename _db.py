@@ -90,7 +90,7 @@ database = Database()
 
 
 def test_select(post_id: int = 241183):
-    res = database.select_all_from(table="posts", condition=f"ID={post_id}")
+    res = database.select_all_from(table="movie", condition=f"ID={post_id}")
     print(res)
 
 
