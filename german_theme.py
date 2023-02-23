@@ -166,7 +166,7 @@ class GermanTheme:
             print("Diff")
             database.update_table(
                 table="episode",
-                set_cond=f"data={data}",
+                set_cond=f"data='{data}'",
                 where_cond=f"movie_id={movieId}",
             )
 
